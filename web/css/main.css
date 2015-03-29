@@ -17,6 +17,10 @@
     border: none;
 }
 
+#buttonContinue {
+    width: 100%;
+}
+
 .outer {
     display: table;
     position: absolute;
