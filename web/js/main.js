@@ -254,9 +254,10 @@ var TestController = function()
 				var markTd = $("<td></td>");
 				var markDiv = $("<div></div>");
 				markDiv.attr("data-row", i);
+				markDiv.addClass(" waves-effect waves-teal");
 				markDiv.attr("data-mark",j);
 				markDiv.click(matrixMarkHandler);
-				markTd.addClass("mark waves-effect waves-teal");
+				markTd.addClass("mark");
 				markDiv.html(j);
 				markTd.append(markDiv);
 				tr.append(markTd);
@@ -277,7 +278,6 @@ var TestController = function()
 		}
 		matrixValues = [];
 		marksTable.find("div").removeClass("active");
-		marksTable.find("td").removeClass("td-active");
 		matrixCurrentStart = matrixCurrent;
 		marksTable.find("td:first-child").each(function(index, element) {
 			$(element).html(matrixQuestions[matrixCurrent]);
@@ -287,8 +287,6 @@ var TestController = function()
 	}
 	var matrixMarkHandler = function() {
 		$(this).parents("tr").find("div").removeClass("active");
-		$(this).parents("tr").find("td").removeClass("td-active");
-		$(this).parent().addClass("td-active");
 		$(this).addClass("active");
 		matrixValues[parseInt($(this).attr("data-row"))] = parseInt($(this).attr("data-mark"));
 	}

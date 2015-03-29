@@ -43,15 +43,19 @@
     display: none;
 }
 
+#marksTable {
+    width: 100%;
+}
+
 #marksTable .mark {
     text-align: center;
-    width: 55.5px;
-    height: 55.5px;
-    display: inline-block;
+    width: 40.5px;
+    height: 40.5px;
+    display: table-cell;
     position: relative;
     z-index: 1;
-    line-height: 37px;
-    padding: 0;
+    line-height: 40.5px;
+    padding: 5px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
@@ -65,9 +69,9 @@
 }
 
 #marksTable .mark div {
-    width: 55.5px;
-    height: 55.5px;
-    line-height: 55.5px;
+    width: 40.5px;
+    height: 40.5px;
+    line-height: 40.5px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
@@ -75,11 +79,5 @@
 
 #marksTable .mark div.active {
     background-color: rgba(0, 150, 136, 0.7);
-}
-
-#marksTable td.mark.td-active {
-    /* -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-    -moz-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     color: #fff;
 }
