@@ -269,11 +269,16 @@ var TestController = function()
 	}
 	var matrixUpdate = function()
 	{
-		
+
 		if(matrixCurrent == 0)
 		{
 			matrixStage++;
-			matrixBlock.children("p").html(matrixTexts[matrixStage-1].text);
+            var matrixDescription = matrixBlock.children("p");
+            matrixDescription.html(matrixTexts[matrixStage-1].text);
+            matrixDescription.addClass("active");
+            setTimeout(function() {
+                matrixDescription.removeClass("active");
+            }, 1000);
             title.html(matrixTexts[matrixStage-1].title);
 		}
 		matrixValues = [];

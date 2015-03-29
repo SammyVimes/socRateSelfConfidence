@@ -93,3 +93,17 @@
 .input-field label.active span.hiding {
     display: none;
 }
+
+.highlightable {
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
+    display: inline-block;
+}
+
+.highlightable.active {
+    background-color: rgba(100, 181, 246, 0.8);
+    color: #fff;
+}
