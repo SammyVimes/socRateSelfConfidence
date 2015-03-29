@@ -275,11 +275,17 @@ var TestController = function()
 			matrixStage++;
             var matrixDescription = matrixBlock.children("p");
             matrixDescription.html(matrixTexts[matrixStage-1].text);
-            matrixDescription.addClass("active");
+            header.addClass("active");
             setTimeout(function() {
-                matrixDescription.removeClass("active");
+                header.removeClass("active");
             }, 1000);
             title.html(matrixTexts[matrixStage-1].title);
+
+            $('html, body').animate({
+                scrollTop: 0
+            }, 300, function(){
+            });
+
 		}
 		matrixValues = [];
 		marksTable.find("div").removeClass("active");

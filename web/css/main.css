@@ -95,15 +95,28 @@
 }
 
 .highlightable {
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -o-transition: 0.5s;
-    -ms-transition: 0.5s;
-    transition: 0.5s;
-    display: inline-block;
+    will-change: opacity,transform;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
 }
 
 .highlightable.active {
-    background-color: rgba(100, 181, 246, 0.8);
-    color: #fff;
+    /*background-color: rgba(100, 181, 246, 0.8);*/
+    color: #ee6e73;
+}
+
+.highlightable .header {
+    will-change: opacity,transform;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+.highlightable.active .header {
+    color: #ee6e73;
+    font-weight: 300;
 }
