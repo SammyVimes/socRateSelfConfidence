@@ -141,7 +141,7 @@ var TestController = function()
         formDescription.html("");
 		if(specific == 1)
 		{
-            var input= $('<div class="input-field"><input id="input" type="text" name="formInput" class="validate"><label for="input">' + formQuestions[formQuestion].question + '</label></div>');
+            var input= $('<div class="input-field"><input id="input" type="number" name="formInput" class="validate"><label for="input">' + formQuestions[formQuestion].question + "<span class='hiding'>(кликнуть сюда для ввода)</span>" + '</label></div>');
 			formContent.append(input);
 		}
 		else
