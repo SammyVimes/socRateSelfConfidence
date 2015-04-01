@@ -31,7 +31,6 @@ var TestController = function()
     var matrixCurrentStart = 0;
     var matrixValues;
 
-    var formSpinner;
     var formDescription;
     var formContent;
     var formQuestion = 0;
@@ -128,34 +127,16 @@ var TestController = function()
     {
         stage = 1;
         title.html("Анкета");
-        formSpinner = $("<div class='form-spinner'></div>");
         formDescription = $("<p></p>");
         formContent = $("<p id=\"formContent\"></p>");
         innerContent.html("");
-        formSpinner.append(formDescription);
-        formSpinner.append(formContent);
-        innerContent.append(formSpinner);
+        innerContent.append(formDescription);
+        innerContent.append(formContent);
         formUpdate();
     }
     var formUpdate = function()
     {
         var specific = formQuestions[formQuestion].specific;
-        var $clone = formSpinner.clone();
-        formSpinner.removeClass("slide-from-right");
-        formSpinner.removeClass("form-spinner");
-        formSpinner.addClass("form-spinner-init");
-        innerContent.append($clone);
-        setTimeout(function() {
-            formSpinner.addClass("form-spinner");
-            formSpinner.removeClass("form-spinner-init");
-            formSpinner.addClass("slide-from-right");
-            $clone.addClass("slide-to-left");
-            $clone.addClass("clone");
-            $clone.removeClass("slide-from-right");
-            setTimeout(function() {
-                $clone.remove();
-            }, 500);
-        }, 10);
         formContent.html("");
         formDescription.html("");
         if(specific == 1)
@@ -289,10 +270,27 @@ var TestController = function()
     var matrixUpdate = function()
     {
         var $matrixContent = $(matrixContent) ;
-        var $clone = $matrixContent.clone();
 
         if(matrixCurrent == 0)
         {
+            if (matrixStage > 0) {
+                var $clone = $matrixContent.clone();
+                $matrixContent.removeClass("slide-from-right");
+                $matrixContent.removeClass("form-spinner");
+                $matrixContent.addClass("form-spinner-init");
+                innerContent.append($clone);
+                setTimeout(function() {
+                    $matrixContent.addClass("form-spinner");
+                    $matrixContent.removeClass("form-spinner-init");
+                    $matrixContent.addClass("slide-from-right");
+                    $clone.addClass("slide-to-left");
+                    $clone.addClass("clone");
+                    $clone.removeClass("slide-from-right");
+                    setTimeout(function() {
+                        $clone.remove();
+                    }, 500);
+                }, 10);
+            }
             matrixStage++;
             matrixBlock.children("p").html(matrixTexts[matrixStage-1].text);
             title.html(matrixTexts[matrixStage-1].title);
@@ -313,23 +311,6 @@ var TestController = function()
             matrixCurrent++;
             matrixValues.push(-1);
         });
-
-
-        $matrixContent.removeClass("slide-from-right");
-        $matrixContent.removeClass("form-spinner");
-        $matrixContent.addClass("form-spinner-init");
-        innerContent.append($clone);
-        setTimeout(function() {
-            $matrixContent.addClass("form-spinner");
-            $matrixContent.removeClass("form-spinner-init");
-            $matrixContent.addClass("slide-from-right");
-            $clone.addClass("slide-to-left");
-            $clone.addClass("clone");
-            $clone.removeClass("slide-from-right");
-            setTimeout(function() {
-                $clone.remove();
-            }, 500);
-        }, 10);
 
     }
     var matrixMarkHandler = function() {
