@@ -94,20 +94,6 @@
     display: none;
 }
 
-.highlightable {
-    will-change: opacity,transform;
-    -webkit-transition: all 0.5s ease-out;
-    -moz-transition: all 0.5s ease-out;
-    -o-transition: all 0.5s ease-out;
-    -ms-transition: all 0.5s ease-out;
-    transition: all 0.5s ease-out;
-}
-
-.highlightable.active {
-    /*background-color: rgba(100, 181, 246, 0.8);*/
-    color: #ee6e73;
-}
-
 .highlightable .header {
     will-change: opacity,transform;
     -webkit-transition: all 0.5s ease-out;
@@ -119,4 +105,33 @@
 .highlightable.active .header {
     color: #ee6e73;
     font-weight: 300;
+}
+
+
+.form-spinner {
+    transition: all 0.5s ease-out;
+}
+
+.form-spinner-init {
+    transform: translateX(150%);
+}
+
+.slide-to-left {
+    transform: translateX(-150%);
+}
+
+
+.slide-from-right {
+    transform: translateX(0%);
+}
+
+#innerContent {
+    position: relative;
+    overflow: hidden;
+}
+
+.clone {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
